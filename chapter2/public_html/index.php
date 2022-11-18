@@ -26,4 +26,4 @@ $counter++;
 file_put_contents($COUNTER_FILE, $counter);
 
 // print counter value so we can see the value is persisted
-print("Counterx: $counter\n");
+print("Counter: $counter\n");

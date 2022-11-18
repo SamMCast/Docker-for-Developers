@@ -1,12 +1,14 @@
 # we will inherit from  the Debian image on DockerHub
-FROM debian:10
+FROM ubuntu:20.04
 
+ARG DEBIAN_FRONTEND=noninteractive
 # set timezone so files' timestamps are correct
-ENV TZ=America/Los_Angeles
+ENV TZ=US/Central
 
 # install apache and php 7.3
 # we include procps and telnet so you can use these with shell.sh prompt
-RUN apt-get update -qq >/dev/null && apt-get install -y -qq procps telnet apache2 php7.3 >/dev/null
+RUN apt-get update -qq >/dev/null && apt-get install -y -qq procps telnet apache2 php7.3 software-properties-common >/dev/null && \
+add-apt-repository ppa:ondrej/php > /dev/null && apt-get update -qq >/dev/null && apt install -y libapache2-mod-php7.3 >/dev/null
 
 # add a user - this user will own the files in /home/app
 RUN useradd --user-group --create-home --shell /bin/false app
