@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker push dockerfordevelopers/subscriber
+docker push $DOCKERORG/dockerfordev-subscriber
 

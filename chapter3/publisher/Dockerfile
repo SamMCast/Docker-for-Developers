@@ -1,8 +1,10 @@
 # we will inherit from the NodeJS v12 image on DockerHub
 FROM node:12
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # set timezone so files' timestamps are correct
-ENV TZ=America/Los_Angeles
+ENV TZ=America/Chicago
 
 # we include procps and telnet so you can use these with shell.sh prompt
 RUN apt-get update -qq >/dev/null && apt-get install -y -qq curl procps telnet >/dev/null
