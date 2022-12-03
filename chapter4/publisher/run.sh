@@ -11,4 +11,4 @@ docker run \
   -e TITLE=$SERVICE \
   -p 3000:3000 \
   --network chapter4 \
-  dockerfordevelopers/$SERVICE
+  $DOCKERORG/dockerfordev-$SERVICE

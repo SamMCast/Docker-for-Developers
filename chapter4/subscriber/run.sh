@@ -11,5 +11,5 @@ docker run \
   --restart always \
   -e TITLE=$SERVICE \
   --network chapter4 \
-  dockerfordevelopers/$SERVICE
+  $DOCKERORG/dockerfordev-$SERVICE
 echo "*************** started subscriber"

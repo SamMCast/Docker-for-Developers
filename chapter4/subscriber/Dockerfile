@@ -1,8 +1,10 @@
 # we will inherit from the NodeJS v13 image on DockerHub
 FROM node:13
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # set timezone so files' timestamps are correct
-ENV TZ=America/Los_Angeles
+ENV TZ=America/Chicago
 
 # install needed system programs
 # we include procps and telnet so you can use these with shell.sh prompt

@@ -10,4 +10,4 @@ docker run \
     --rm \
     --name="subscriber" \
     -e HOSTIP=$HOSTIP \
-    dockerfordevelopers/subscriber
+    $DOCKERORG/dockerfordev-subscriber

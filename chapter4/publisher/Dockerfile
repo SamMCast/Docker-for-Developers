@@ -1,7 +1,11 @@
 # we will inherit from the NodeJS v12 alpine OS image on DockerHub
 
 FROM node:12-alpine
-ENV TZ=America/Los_Angeles
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# set timezone so files' timestamps are correct
+ENV TZ=America/Chicago
 
 # add a user - this user will own the files in /home/app
 RUN adduser -S app
